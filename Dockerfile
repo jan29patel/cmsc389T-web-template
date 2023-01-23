@@ -7,11 +7,11 @@
 
 FROM node:10-alpine
 #RUN jan29patel -ms /bin/bash alp
-RUN mkdir -p /home/alp/app/node_modules && chown -R alp:alp/home/alp/app
-WORKDIR /home/alp/app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/alp/app
+WORKDIR /home/node/app
 COPY package*.json ./
 RUN npm install
 USER alp
-COPY --chown=alp:alp . .
+COPY --chown=node:node . .
 EXPOSE 8080
 CMD [ "node", "app.js"]
