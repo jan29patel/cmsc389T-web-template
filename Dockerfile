@@ -7,11 +7,11 @@
 
 FROM node:10-alpine
 RUN jan29patel -ms /bin/bash alp
-RUN mkdir -p /home/alp/app/ && chown -R alp:alp /home/alp/app
+RUN mkdir -p /home/alp/app/node_modules && chown -R alp:alp /home/alp/app
 WORKDIR /home/alp/app
-COPY *.java ./
-COPY junit-* ./
+COPY package*.json ./
+RUN npm install
 USER alp
-RUN javac -cp "junit-4.10.jar:." *.java
 COPY --chown=alp:alp . .
-CMD [ "java", "-cp", "junit-4.10.jar:.", "org.junit.runner.JUnitCore", "TestAdd", "TestSub"]
+EXPOSE 8080
+CMD [ "node", "app.js"]
