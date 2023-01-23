@@ -7,7 +7,7 @@
 
 FROM node:10-alpine
 #RUN jan29patel -ms /bin/bash alp
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/alp/app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 COPY package*.json ./
 RUN npm install
