@@ -6,6 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     #fill out the configuration here
+    image: nodejs
+    container_name: nodejs
+    restart: unless-stopped
     networks:
       - app-network
   
