@@ -15,6 +15,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /Users/janu
+            cd /pub/jpatel22
             unalias rm
             rm -rf cmsc389T-web-template
